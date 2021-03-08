@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     function timeTracer() {
         //get current number of hours.
-        var timeCurrent = moment().hour();
+        var timeCurrent = parseInt(moment().format("H"));
 
         // loop over time blocks
         $(".textarea").each(function () {
@@ -24,8 +24,6 @@ $(document).ready(function () {
 
             // Check the time and see if the id's match
             if (blockTime < timeCurrent) {
-                $(this).removeClass("future");
-                $(this).removeClass("present");
                 $(this).addClass("past");
             }
             else if (blockTime === timeCurrent) {
@@ -53,6 +51,7 @@ $(document).ready(function () {
     $("#hour15 .description").val(localStorage.getItem("hour15"));
     $("#hour16 .description").val(localStorage.getItem("hour16"));
     $("#hour17 .description").val(localStorage.getItem("hour17"));
-
+     $("#hour18 .description").val(localStorage.getItem("hour18"));
+    
     timeTracer();
 })
