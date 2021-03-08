@@ -20,6 +20,7 @@ $(document).ready(function () {
         console.log(timeCurrent)
 
         // loop over time blocks
+
         $("textarea").each(function () {
             var blockTime = parseInt($(this).attr("id"));
 
