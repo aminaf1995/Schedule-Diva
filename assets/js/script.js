@@ -12,23 +12,23 @@ $(document).ready(function () {
 
         // Save text in local storage
         localStorage.setItem(time, text);
-    })
+    });
 
     function timeTracer() {
         //get current number of hours.
-        var timeNow = moment().hour();
+        var timeCurrent = moment().hour();
 
         // loop over time blocks
-        $(".time-block").each(function () {
-            var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+        $(".textarea").each(function () {
+            var blockTime = parseInt($(this).attr("id"));
 
             // Check the time and see if the id's match
-            if (blockTime < timeNow) {
+            if (blockTime < timeCurrent) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
                 $(this).addClass("past");
             }
-            else if (blockTime === timeNow) {
+            else if (blockTime === timeCurrent) {
                 $(this).removeClass("past");
                 $(this).removeClass("future");
                 $(this).addClass("present");
